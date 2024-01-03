@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Action</title>
+    <script
+      src="https://kit.fontawesome.com/f0eaba7a89.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+      }
+      .navbar {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        background: rgb(183, 13, 183);
+        padding: 10px;
+      }
+      .hamburger {
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 50%;
+        height: 38px;
+        width: 38px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      i {
+        font-size: 30px;
+      }
+
+      .logo {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .dropDown {
+        display: none;
+        width: 100%;
+        background: rgba(128, 128, 128, 0.671);
+        flex-direction: column;
+        transition: transform 2s;
+      }
+      a {
+        font-size: 20px;
+        color: black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo"></div>
+      <div class="hamburger">
+        <h1><i class="fa-solid fa-bars"></i></h1>
+      </div>
+    </div>
+    <div class="dropDown">
+      <a href="">Home</a>
+      <a href="">About Us</a>
+      <a href="">Contact Us</a>
+      <a href="">Github</a>
+    </div>
+
+    <script>
+      function dropBox() {
+        if (
+          document
+            .querySelector(".hamburger i")
+            .classList.contains("fa-solid") &&
+          document.querySelector(".hamburger i").classList.contains("fa-bars")
+        ) {
+          document.querySelector(".hamburger i").classList.remove("fa-bars");
+          document.querySelector(".hamburger i").classList.add("fa-xmark");
+          document.querySelector(".dropDown").style.display = "flex";
+        } else {
+          document.querySelector(".hamburger i").classList.remove("fa-xmark");
+          document.querySelector(".hamburger i").classList.add("fa-bars");
+          document.querySelector(".dropDown").style.display = "none";
+        }
+      }
+
+      document.querySelector(".hamburger").addEventListener("click", () => {
+        dropBox();
+      });
+    </script>
+  </body>
+</html>
