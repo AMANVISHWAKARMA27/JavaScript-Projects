@@ -7,6 +7,17 @@
 body{
     background: #001e4d;
 }
+#start-btn{
+    height: 40px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: transparent;
+    background: rgb(19, 198, 19);
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.77);
+}
 .app{
     background: #fff;
     width: 90%;

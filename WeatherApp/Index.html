@@ -39,7 +39,7 @@
     </div>
 
     <script>
-      const apiKey = "198c63bed400f9a7ada54bd262cfac81";
+      const apiKey = "fdac713571ba4c0ab50191107242205";
       const apiUrl =
         "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
 
@@ -50,11 +50,11 @@
       async function checkWeather(city) {
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`); //these datas will be fetched from the API server
 
-        if (response.status == 404) { 
+        if (response.status == 404) {
           document.querySelector(".error").style.display = "block";
           document.querySelector(".weather").style.display = "none"; //When the input is invalid, t]no data will be shown. Instead a predefined error message will appear.
         } else {
-          var data = await response.json();  //data will be send to the javascript
+          var data = await response.json(); //data will be send to the javascript
 
           document.querySelector(".city").innerHTML = data.name; //taking name from object named data
           document.querySelector(".temp").innerHTML = data.main.temp + "&degC"; // taking temp from object named main inside another object named data
@@ -62,8 +62,9 @@
             data.main.humidity + "%"; // taking humidity from object named main inside another object named data
           document.querySelector(".wind").innerHTML = data.wind.speed + "km/h"; //taking wind speed from object named wind inside another object named data
 
-          if (data.weather[0].main == "Clouds") { //Chaning images as per the weather.
-            weather_Icon.src = "clouds.png"; 
+          if (data.weather[0].main == "Clouds") {
+            //Chaning images as per the weather.
+            weather_Icon.src = "clouds.png";
           } else if (data.weather[0].main == "Clear") {
             weather_Icon.src = "clear.png";
           } else if (data.weather[0].main == "Rain") {

@@ -45,7 +45,7 @@
 
             if ( m2 >= m1)
             {
-                m3 = m3-m2;
+                m3 = m2-m1;
             } else {
                 y3--;
                 m3 = 12 + m2 - m1;
@@ -66,7 +66,7 @@
             result.innerHTML =`You are <span>${y3}</span> years, <span>${m3}</span> months and <span>${d3}</span> days old.`
         }
 
-        function getDaysInMonth(){
+        function getDaysInMonth(year, month,index){
             return new Date(year, month, 0).getDate();
         }
     </script>
